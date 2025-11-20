@@ -4,6 +4,7 @@ import CvEntry from "../components/CvEntry";
 export default function Cv() {
     return(
         <>
+        <body className="bg-gray-100">
             <h1 className="text-5xl text-center border rounded-xl">Curriculum Vitae</h1>
 
             <CvEntry title="Dindon de la farce" employe="dindons|farces.com">
@@ -24,7 +25,7 @@ export default function Cv() {
                     <p>Assemblage d'engins explosifs propulsés à la main, aussi appellé "grenades".</p>
                 </ul>
             </CvEntry>
-
+        </body>
         </>
     )
 }

@@ -23,7 +23,7 @@ export default function Navbar() {
                 <Navlink href="/">Infos</Navlink>
                 <Navlink href="crousticho">Les crousticho</Navlink>
                 <Navlink href="/cv">Cv</Navlink>
-                
+                <Navlink href="/blog">Le Blog</Navlink>
             </ul>
         </nav>
     )
