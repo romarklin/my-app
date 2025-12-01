@@ -23,9 +23,7 @@ export default function Cv() {
                         Expérience Professionnelle
                     </h2>
 
-                    {/* Remarque : Le composant CvEntry utilise probablement un fond blanc par défaut. 
-                       Pour un thème sombre complet, vous devrez également modifier 'components/CvEntry.tsx' 
-                       pour changer 'bg-white' en 'bg-gray-700' et adapter les couleurs de texte internes. */}
+                    
                     
                     <CvEntry title="Dindon de la farce" employe="dindons|farces.com">
                         <ul className="list-disc list-inside space-y-1">

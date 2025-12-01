@@ -37,7 +37,7 @@ export default function HomePage() {
         {/* Petit footer/info */}
         <div className="mt-16 pt-8 border-t border-gray-100">
           <p className="text-sm text-gray-400">
-            Codé par Romain Halewyck &copy; 2024. Propulsé par Next.js et Tailwind CSS.
+            Codé par Romain Halewyck &copy; 2025. Propulsé par Next.js et Tailwind CSS.
           </p>
         </div>
       </div>
