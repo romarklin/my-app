@@ -7,13 +7,13 @@ type BlogPostPageProps = {
   params: Promise<{ id: string }>
 }
 
-export default async function BlogPostPage(props: BlogPostPageProps) {
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
  
-  const id = Number((await props.params).id);
+  const id = Number((await params).id);
   const post = await getPost(id);
 
   if (!post) {
-    notFound();
+    return <p>Hello {id}</p>
   }
 
   return (
@@ -23,14 +23,14 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
       </Link>
       
       <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-      <p className="text-lg text-gray-800 leading-relaxed whitespace-pre-wrap">
+      <p className="text-lg text-white leading-relaxed whitespace-pre-wrap">
         {post.content}
       </p>
 
       <div className="mt-8 border-t pt-4">
         <Link 
-          href={`/blog/edit/${id}`} 
-          className="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300"
+          href={`/blog/edit/${post.id}`} 
+          className="bg-gray-200 text-gray-800 px-9 py-2 rounded hover:bg-gray-300"
         >
           Edit this Post
         </Link>

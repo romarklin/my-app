@@ -20,8 +20,7 @@ export default function Navbar() {
     return (
         <nav className="bg-cyan-500 p-4">
             <ul className="flex space-x-4 red text-white font-semibold">
-                <Navlink href="/">Infos</Navlink>
-                <Navlink href="crousticho">Les crousticho</Navlink>
+                <Navlink href="/">Acceuil</Navlink>
                 <Navlink href="/cv">Cv</Navlink>
                 <Navlink href="/blog">Le Blog</Navlink>
             </ul>
