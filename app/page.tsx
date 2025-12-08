@@ -1,9 +1,22 @@
+import { redirect } from 'next/navigation';
 import Link from 'next/link';
+import { getCurrentUser } from '@/lib/user';
 
-export default function HomePage() {
+export default async function HomePage() {
+
+const user = await getCurrentUser();
+
+
+  if (!user) {
+    
+    redirect('/login')
+
+  }
+
+
+
   return (
     <div className="min-h-screen bg-black  flex flex-col items-center justify-center p-4 sm:p-8">
-      
       {/* Conteneur principal centré */}
       <div className="max-w-4xl w-full text-center py-16 px-6 sm:px-10 bg-white rounded-3xl shadow-2xl">
         

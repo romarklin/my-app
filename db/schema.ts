@@ -5,3 +5,9 @@ export const tasksTable = pgTable('tasks', {
   title: text().notNull(),
   done: boolean().default(false).notNull(),
 })
+
+export const usersTable = pgTable('users', {
+  id: uuid().defaultRandom().primaryKey(),
+  email: text().notNull().unique(),
+  password: text().notNull(),
+})
