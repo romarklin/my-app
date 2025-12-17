@@ -2,21 +2,21 @@
 
 import React, { useState, FormEvent, use } from 'react';
 
-// Définition des types pour les props si vous en aviez, ici vide pour la simplicité
+
 interface LoginPageProps {}
 
 const LoginPage: React.FC<LoginPageProps> = () => {
-    // 1. Déclarer les états pour le nom d'utilisateur et le mot de passe
+    // 1 Déclarer les états pour le nom d'utilisateur et le mot de passe
     const [username, setUsername] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [error, setError] = useState<string>('');
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
-    // 2. Fonction de gestion de la soumission du formulaire
+    // 2 Fonction de gestion de la soumission du formulaire
     const handleSubmit = async (event: FormEvent) => {
         event.preventDefault(); // Empêche le rechargement de la page par défaut
         
-        // Réinitialiser les erreurs
+        // Reset les erreurs
         setError('');
         setIsLoading(true);
 
@@ -25,9 +25,9 @@ const LoginPage: React.FC<LoginPageProps> = () => {
         console.log('Tentative de connexion avec:', { username, password });
 
         try {
-            // Ici, vous feriez l'appel API (par exemple, vers l'endpoint Node.js /login)
             
-            // Exemple de logique de validation simple :
+            
+            // Exemple de logique de validation :
             if (username === 'admin' && password === 'password123') {
                 // Succès : Redirection ou stockage du jeton/session
                 console.log('Connexion réussie ! Redirection...');
@@ -35,7 +35,7 @@ const LoginPage: React.FC<LoginPageProps> = () => {
                 await new Promise(resolve => setTimeout(resolve, 1500));
                 
                 alert('Connexion réussie ! (Simulée)');
-                // window.location.href = '/dashboard'; // Décommenter pour une vraie redirection
+                
             
             } else {
                 // Échec : Afficher l'erreur
@@ -104,7 +104,7 @@ const LoginPage: React.FC<LoginPageProps> = () => {
     );
 };
 
-// Styles CSS simples pour la démo
+// Styles CSS 
 const styles: { [key: string]: React.CSSProperties } = {
     container: {
         display: 'flex',

@@ -4,15 +4,15 @@ import { getPost } from "@/lib/blog";
 import { notFound } from "next/navigation";
 
 export default async function BlogPostPage(props: { params: Promise<{ id: string }> }) {
-  // 1. Await the params (Crucial for Next.js 15)
+  // 1. Attends les params 
   const resolvedParams = await props.params;
   
   console.log("🌐 Page received params:", resolvedParams);
 
-  // 2. Convert String ID to Number
+  // 2. convertir l'ID en nombre
   const id = Number(resolvedParams.id);
 
-  // 3. Check for invalid IDs (NaN)
+  // 3. REgarde pour des IDs invalides
   if (isNaN(id)) {
     console.error("❌ ID is NaN (Not a Number)");
     return notFound();

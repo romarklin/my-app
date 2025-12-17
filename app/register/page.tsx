@@ -2,22 +2,22 @@
 
 import React, { useState, FormEvent } from 'react';
 
-// Interfaces pour les types de props (vide pour l'exemple)
+
 interface RegisterPageProps {}
 
 const RegisterPage: React.FC<RegisterPageProps> = () => {
-    // 1. Déclarer les états du formulaire
+    
     const [email, setEmail] = useState<string>('');
     const [username, setUsername] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [confirmPassword, setConfirmPassword] = useState<string>('');
     
-    // États pour le feedback utilisateur
+    // États pour feedback user
     const [error, setError] = useState<string>('');
     const [successMessage, setSuccessMessage] = useState<string>('');
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
-    // 2. Fonction de gestion de la soumission du formulaire
+    // Fonction de gestion de la soumission formulaire
     const handleSubmit = async (event: FormEvent) => {
         event.preventDefault(); 
         
@@ -34,7 +34,7 @@ const RegisterPage: React.FC<RegisterPageProps> = () => {
             return;
         }
 
-        // 2. Vérification simple de la longueur du mot de passe (Exemple)
+        // 2. Vérification simple de la longueur du mot de passe 
         if (password.length < 8) {
             setError('Le mot de passe doit contenir au moins 8 caractères.');
             setIsLoading(false);
@@ -46,7 +46,7 @@ const RegisterPage: React.FC<RegisterPageProps> = () => {
         console.log('Tentative d\'inscription avec:', { username, email });
 
         try {
-            // Ici, vous feriez l'appel API (fetch ou axios) vers votre endpoint Node.js /register
+            
             
             // Exemple de simulation de réussite
             await new Promise(resolve => setTimeout(resolve, 2000));
@@ -153,7 +153,7 @@ const RegisterPage: React.FC<RegisterPageProps> = () => {
     );
 };
 
-// Styles CSS simples pour la démo
+// Styles CSS 
 const styles: { [key: string]: React.CSSProperties } = {
     container: {
         display: 'flex',

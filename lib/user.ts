@@ -24,12 +24,17 @@ export async function login(form: FormData) {
   const loggedIn = users.length > 0
     ? await compare(password, users[0].password)
     : false
-  if (loggedIn) {
-    const secret = process.env.SECRET
+
+  if (!loggedIn) {
+        // Lancer une erreur en cas d'échec de connexion
+        
+        throw new Error("Identifiants de connexion invalides.");    
+  }
+  const secret = process.env.SECRET
     const signature = await hash(secret + login, 10)
     const cookieStore = await cookies()
     cookieStore.set('session', `${login};${signature}`)
-  }
+
 redirect((await headers()).get('referer') ?? '/')
 
 }
